@@ -69,3 +69,16 @@ git clone https://github.com/boundless-xyz/boundless
 cd boundless
 git checkout release-0.9
 ```
+
+![image](https://github.com/user-attachments/assets/6159be8a-5cae-42a2-8e7c-d5735c59b38d)
+
+
+## Step 2: Install Dependencies
+
+- Install Docker Compose and Docker Nvidia Support. For Ubuntu 22.04 LTS, run the following command for a quick installation:
+
+```bash
+sudo ./scripts/setup.sh
+```
+
+![image](https://github.com/user-attachments/assets/6525eee5-c6f0-4f89-8572-95af9710d527)
