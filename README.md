@@ -59,6 +59,15 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 ```
 
+## 5. Rust : 
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+![image](https://github.com/user-attachments/assets/0efae43c-b5ba-488c-9f3e-de0aa12698f4)
+
+
+- 1 - Enter
 
 ## Step 1: Clone Boundless Repository
 
@@ -80,5 +89,5 @@ git checkout release-0.9
 ```bash
 sudo ./scripts/setup.sh
 ```
+![image](https://github.com/user-attachments/assets/f45981cc-18ad-4439-b14d-e811d3745249)
 
-![image](https://github.com/user-attachments/assets/6525eee5-c6f0-4f89-8572-95af9710d527)
