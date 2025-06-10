@@ -8,6 +8,7 @@
 | **RAM**          | X++ GB ( X++ )                    |
 | **Storage**      | X TB+ NVME GB SDD                   |
 | **Network**      | X Mbps (1 Gbps+ recommended) |
+| **UBUNTU**      | UBUNTU 22.04 ! |
 
 
 | Server Provider        | Link              | Features |
