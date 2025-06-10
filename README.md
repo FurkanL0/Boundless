@@ -58,3 +58,14 @@ docker-compose --version
 sudo groupadd docker
 sudo usermod -aG docker $USER
 ```
+
+
+## Step 1: Clone Boundless Repository
+
+- On Ubuntu 22.04, clone the Boundless monorepos on your proving machine and upgrade to the latest version:
+
+```bash
+git clone https://github.com/boundless-xyz/boundless
+cd boundless
+git checkout release-0.9
+```
