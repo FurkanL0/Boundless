@@ -92,6 +92,12 @@ source $HOME/.cargo/env
 ```bash
 just --version
 ```
+
+## Screen : 
+```bash
+screen -S boundless
+```
+
 ## Step 1: Clone Boundless Repository
 
 - On Ubuntu 22.04, clone the Boundless monorepos on your proving machine and upgrade to the latest version:
