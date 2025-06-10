@@ -74,7 +74,7 @@ source $HOME/.cargo/env
 
 ## Rzup : 
 ```bash
-rzup install rust
+cargo install rzup
 ```
 ```bash
 rzup install rust
