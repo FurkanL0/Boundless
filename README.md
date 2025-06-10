@@ -82,7 +82,16 @@ rzup install rust
 
 ![image](https://github.com/user-attachments/assets/fec1eec2-c86b-4f97-b9e2-d52b54622271)
 
-
+## JUST : 
+```bash
+cargo install just
+```
+```bash
+source $HOME/.cargo/env
+```
+```bash
+just --version
+```
 ## Step 1: Clone Boundless Repository
 
 - On Ubuntu 22.04, clone the Boundless monorepos on your proving machine and upgrade to the latest version:
@@ -111,6 +120,9 @@ sudo ./scripts/setup.sh
 ```bash
 cargo install --git https://github.com/risc0/risc0 bento-client --bin bento_cli
 ```
+
+![image](https://github.com/user-attachments/assets/140f0ddf-ee3f-4202-933d-5c7b27c98e3e)
+
 
 - Run Bento : 
 ```bash
