@@ -79,6 +79,10 @@ rzup install rust
 ```bash
 rzup install rust
 ```
+
+![image](https://github.com/user-attachments/assets/fec1eec2-c86b-4f97-b9e2-d52b54622271)
+
+
 ## Step 1: Clone Boundless Repository
 
 - On Ubuntu 22.04, clone the Boundless monorepos on your proving machine and upgrade to the latest version:
