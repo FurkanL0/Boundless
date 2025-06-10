@@ -134,3 +134,14 @@ cargo install --git https://github.com/risc0/risc0 bento-client --bin bento_cli
 ```bash
 just bento
 ```
+```bash
+RUST_LOG=info bento_cli -c 32
+```
+![image](https://github.com/user-attachments/assets/afb73def-4253-4a3d-83b2-0f9214028da7)
+
+
+## Install Boundless CLI : 
+```bash
+cargo install --locked boundless-cli
+```
+
