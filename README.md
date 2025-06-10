@@ -68,7 +68,17 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 
 - 1 - Enter
+```bash
+source $HOME/.cargo/env
+```
 
+## Rzup : 
+```bash
+rzup install rust
+```
+```bash
+rzup install rust
+```
 ## Step 1: Clone Boundless Repository
 
 - On Ubuntu 22.04, clone the Boundless monorepos on your proving machine and upgrade to the latest version:
@@ -91,3 +101,14 @@ sudo ./scripts/setup.sh
 ```
 ![image](https://github.com/user-attachments/assets/f45981cc-18ad-4439-b14d-e811d3745249)
 
+## Step 3: Test Proof
+
+#### Install Bento_CLI : 
+```bash
+cargo install --git https://github.com/risc0/risc0 bento-client --bin bento_cli
+```
+
+- Run Bento : 
+```bash
+just bento
+```
