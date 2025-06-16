@@ -126,7 +126,10 @@ sudo ./scripts/setup.sh
 ```bash
 cargo install --git https://github.com/risc0/risc0 bento-client --bin bento_cli
 ```
-
+```bash
+echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
 ![image](https://github.com/user-attachments/assets/140f0ddf-ee3f-4202-933d-5c7b27c98e3e)
 
 
