@@ -147,4 +147,7 @@ RUST_LOG=info bento_cli -c 32
 ```bash
 cargo install --locked boundless-cli
 ```
-
+```bash
+export PATH=$PATH:/root/.cargo/bin
+source ~/.bashrc
+```
