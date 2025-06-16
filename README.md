@@ -151,3 +151,7 @@ cargo install --locked boundless-cli
 export PATH=$PATH:/root/.cargo/bin
 source ~/.bashrc
 ```
+#### Stake : 
+```bash
+boundless account deposit-stake STAKE_AMOUNT
+```
