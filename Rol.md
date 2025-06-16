@@ -117,3 +117,10 @@ boundless \
 - Eğer --private-key <PRIVATE_KEY> hatası verir ise $PRIVATE_KEY yerine cüzdan private key'inizi yazın.
 
 ![image](https://github.com/user-attachments/assets/98beeaba-e50c-4a55-a0e3-671eaa0d9a81)
+
+## Guild : 
+
+- Link : https://guild.xyz/boundless-xyz#!
+
+![image](https://github.com/user-attachments/assets/495af26f-9b96-4230-8af8-11991b1db590)
+
