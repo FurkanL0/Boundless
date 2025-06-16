@@ -154,6 +154,7 @@ source ~/.bashrc
 #### Stake : 
 
 - USDC Faucet : https://faucet.circle.com/
+- Sepolia Eth Swap USDC : https://app.uniswap.org/swap?chain=sepolia&inputCurrency=NATIVE&outputCurrency=0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238&value=1&field=input
 
 ```bash
 boundless account deposit-stake STAKE_AMOUNT
