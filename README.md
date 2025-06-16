@@ -152,6 +152,9 @@ export PATH=$PATH:/root/.cargo/bin
 source ~/.bashrc
 ```
 #### Stake : 
+
+- USDC Faucet : https://faucet.circle.com/
+
 ```bash
 boundless account deposit-stake STAKE_AMOUNT
 ```
