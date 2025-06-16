@@ -4,10 +4,10 @@
 
 | X        | Minimum              |
 |------------------|----------------------------|
-| **CPU**          | X++ |
-| **RAM**          | X++ GB ( X++ )                    |
-| **Storage**      | X TB+ NVME GB SDD                   |
-| **Network**      | X Mbps (1 Gbps+ recommended) |
+| **CPU**          | 16++ |
+| **RAM**          | 32++ GB                   |
+| **Storage**      | 200+ NVME GB SDD                   |
+| **Network**      | 100 Mbps (1 Gbps+ recommended) |
 | **UBUNTU**      | UBUNTU 22.04 ! |
 
 
