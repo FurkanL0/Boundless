@@ -55,6 +55,7 @@ cargo install --git https://github.com/risc0/risc0 bento-client --bin bento_cli
 echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
+![image](https://github.com/user-attachments/assets/140f0ddf-ee3f-4202-933d-5c7b27c98e3e)
 
 ## Boundless CLI Indırme : 
 ```bash
@@ -76,4 +77,4 @@ nano .env.base
 
 ![image](https://github.com/user-attachments/assets/7a6027d2-15b3-4611-b7e3-ec3c707f9a15)
 
-![image](https://github.com/user-attachments/assets/140f0ddf-ee3f-4202-933d-5c7b27c98e3e)
+
