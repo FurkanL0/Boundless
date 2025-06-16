@@ -33,6 +33,20 @@ cargo install rzup
 rzup install rust
 ```
 
+## Nolur Nolmaz Screen : 
+
+```bash
+screen -S boundlessrol
+```
+
+## Boundless Repo Çekelim : 
+
+```bash
+git clone https://github.com/boundless-xyz/boundless
+cd boundless
+git checkout release-0.10
+```
+
 ## Bento_CLI Indirme : 
 ```bash
 cargo install --git https://github.com/risc0/risc0 bento-client --bin bento_cli
@@ -41,4 +55,25 @@ cargo install --git https://github.com/risc0/risc0 bento-client --bin bento_cli
 echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
+
+## Boundless CLI Indırme : 
+```bash
+cargo install --locked boundless-cli
+```
+```bash
+export PATH=$PATH:/root/.cargo/bin
+source ~/.bashrc
+```
+
+#### Mainnet Base Düzenleme : 
+```bash
+nano .env.base
+```
+- Cüzdan Privatekey sonuna = den sonra yazıp yapıştırın export PRIVATE_KEY=
+- export RPC_URL="" tırnak arasına Alhcemy vb. base mainnet rpc alıp yapıştırın. 
+
+- CTRL X - CTRL Y - Enter - Kaydedecek.
+
+![image](https://github.com/user-attachments/assets/7a6027d2-15b3-4611-b7e3-ec3c707f9a15)
+
 ![image](https://github.com/user-attachments/assets/140f0ddf-ee3f-4202-933d-5c7b27c98e3e)
