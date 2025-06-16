@@ -179,7 +179,23 @@ boundless account deposit-stake STAKE_AMOUNT
 
 ![image](https://github.com/user-attachments/assets/5c0635d2-ec3d-4805-bbf7-aee5525c46e0)
 
+## Start : 
+```bash
+just broker
+```
 
+![wos](https://github.com/user-attachments/assets/744e92bb-5b99-4e6f-bd88-4bd45d760faa)
 
+- Logs : 
+```bash
+just broker logs
+```
+ - Logs :
+```bash
+docker compose logs -f broker
+```
+```bash
+docker compose logs -fn 100
+```
 - Dashboard : https://explorer.beboundless.xyz/orders
 - Guild : https://guild.xyz/boundless-xyz#!
