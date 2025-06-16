@@ -70,7 +70,7 @@ source ~/.bashrc
 ```bash
 nano .env.base
 ```
-- Cüzdan Privatekey sonuna = den sonra yazıp yapıştırın export PRIVATE_KEY=
+- export PRIVATE_KEY= Cüzdan Privatekey sonuna = den sonra yazıp yapıştırın
 - export RPC_URL="" tırnak arasına Alhcemy vb. base mainnet rpc alıp yapıştırın. 
 
 - CTRL X - CTRL Y - Enter - Kaydedecek.
