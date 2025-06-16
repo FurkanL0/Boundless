@@ -151,6 +151,23 @@ cargo install --locked boundless-cli
 export PATH=$PATH:/root/.cargo/bin
 source ~/.bashrc
 ```
+
+
+## Base Mainnet : 
+```bash
+nano .env.base
+```
+
+- Add export PRIVATE_KEY=
+- Add export RPC_URL=""
+
+![image](https://github.com/user-attachments/assets/7a6027d2-15b3-4611-b7e3-ec3c707f9a15)
+
+
+- Inject : 
+```bash
+source .env.base
+```
 #### Stake : 
 
 - USDC Faucet : https://faucet.circle.com/
@@ -165,3 +182,4 @@ boundless account deposit-stake STAKE_AMOUNT
 
 
 - Dashboard : https://explorer.beboundless.xyz/orders
+- Guild : https://guild.xyz/boundless-xyz#!
