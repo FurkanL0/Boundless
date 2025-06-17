@@ -13,14 +13,17 @@
 
 | Server Provider        | Link              | Features |
 |------------------|----------------------------|----------------------------|
-| **Contabo**          | [Link](https://www.dpbolvw.net/click-101330552-12454592)                     | Cheap / Paypal  |
-| **PQ**      | [Link](https://pq.hosting/?from=627713)                  | Cheap / Crypto Payment |
-| **NetCup**          | [Link](https://www.netcup.com/en/?ref=261820) | Cheap / Paypal |
 | **VAST GPU**          | [Link](https://cloud.vast.ai/?ref_id=228932) | Cheap / Paypal |
-| **Quickpod GPU**          | [Link](https://console.quickpod.io?affiliate=f26ea1e1-e0d8-4bbc-9e7f-5b03dddde481) | Cheap / Paypal |
 
 ## Project : 
 - Twitter : https://x.com/boundless_xyz
+
+![image](https://github.com/user-attachments/assets/5fbb7dcd-ab59-4d63-9bc4-a3b1ec89b2a5)
+
+- Ubuntu 22.04 VM
+- 16 CPU - Good CPU 
+- Good Internet Speed
+- Minimum Container size 200+
 
 ## 1. Server Update : 
 
