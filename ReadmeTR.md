@@ -4,23 +4,26 @@
 
 | X        | Minimum              |
 |------------------|----------------------------|
-| **CPU**          | X++ |
-| **RAM**          | X++ GB ( X++ )                    |
-| **Storage**      | X TB+ NVME GB SDD                   |
-| **Network**      | X Mbps (1 Gbps+ recommended) |
+| **CPU**          | 16++ |
+| **RAM**          | 32++ GB                   |
+| **Storage**      | 200+ NVME GB SDD                   |
+| **Network**      | 100 Mbps (1 Gbps+ recommended) |
 | **UBUNTU**      | UBUNTU 22.04 ! |
 
 
 | Server Provider        | Link              | Features |
 |------------------|----------------------------|----------------------------|
-| **Contabo**          | [Link](https://www.dpbolvw.net/click-101330552-12454592)                     | Cheap / Paypal  |
-| **PQ**      | [Link](https://pq.hosting/?from=627713)                  | Cheap / Crypto Payment |
-| **NetCup**          | [Link](https://www.netcup.com/en/?ref=261820) | Cheap / Paypal |
 | **VAST GPU**          | [Link](https://cloud.vast.ai/?ref_id=228932) | Cheap / Paypal |
-| **Quickpod GPU**          | [Link](https://console.quickpod.io?affiliate=f26ea1e1-e0d8-4bbc-9e7f-5b03dddde481) | Cheap / Paypal |
 
 ## Project : 
 - Twitter : https://x.com/boundless_xyz
+
+![image](https://github.com/user-attachments/assets/5fbb7dcd-ab59-4d63-9bc4-a3b1ec89b2a5)
+
+- Ubuntu 22.04 VM
+- 16 CPU - Good CPU 
+- Good Internet Speed
+- Minimum Container size 200+
 
 ## 1. Server Update : 
 
@@ -30,7 +33,7 @@ sudo apt update -y && sudo apt upgrade -y
 ## 2. Install Packages:
 
 ```bash
-sudo apt install htop ca-certificates zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev tmux iptables curl nvme-cli git wget make jq libleveldb-dev build-essential pkg-config ncdu tar clang bsdmainutils lsb-release libssl-dev libreadline-dev libffi-dev jq gcc screen file unzip lz4 -y
+sudo apt install htop ca-certificates zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev tmux iptables curl nvme-cli git wget make jq libleveldb-dev build-essential pkg-config ncdu tar clang bsdmainutils lsb-release libssl-dev libreadline-dev libffi-dev jq gcc screen file nano btop unzip lz4 -y
 ```
 
 ## 3. Docker ; 
@@ -151,14 +154,57 @@ cargo install --locked boundless-cli
 export PATH=$PATH:/root/.cargo/bin
 source ~/.bashrc
 ```
+
+
+## Base Mainnet : 
+```bash
+nano .env.base
+```
+
+- Add export PRIVATE_KEY=
+- Add export RPC_URL=""
+
+![image](https://github.com/user-attachments/assets/7a6027d2-15b3-4611-b7e3-ec3c707f9a15)
+
+
+- Inject : 
+```bash
+source .env.base
+```
 #### Stake : 
 
-- USDC Faucet : https://faucet.circle.com/
-- Sepolia Eth Swap USDC : https://app.uniswap.org/swap?chain=sepolia&inputCurrency=NATIVE&outputCurrency=0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238&value=1&field=input
+- Base Chain - USDC - Minimum 1 USDC
 
 ```bash
 boundless account deposit-stake STAKE_AMOUNT
 ```
 
-![image](https://github.com/user-attachments/assets/5c0635d2-ec3d-4805-bbf7-aee5525c46e0)
+![image](https://github.com/user-attachments/assets/9556462f-4386-4eaa-9214-40e00b5c0ceb)
 
+- Base Chain - ETH - Minimum 0.00001
+```bash
+boundless account deposit 0.000001
+```
+![image](https://github.com/user-attachments/assets/98beeaba-e50c-4a55-a0e3-671eaa0d9a81)
+
+
+## Start : 
+```bash
+just broker
+```
+
+![wos](https://github.com/user-attachments/assets/744e92bb-5b99-4e6f-bd88-4bd45d760faa)
+
+- Logs : 
+```bash
+just broker logs
+```
+ - Logs :
+```bash
+docker compose logs -f broker
+```
+```bash
+docker compose logs -fn 100
+```
+- Dashboard : https://explorer.beboundless.xyz/orders
+- Guild : https://guild.xyz/boundless-xyz#!
