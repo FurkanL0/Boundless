@@ -170,14 +170,20 @@ source .env.base
 ```
 #### Stake : 
 
-- USDC Faucet : https://faucet.circle.com/
-- Sepolia Eth Swap USDC : https://app.uniswap.org/swap?chain=sepolia&inputCurrency=NATIVE&outputCurrency=0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238&value=1&field=input
+- Base Chain - USDC - Minimum 1 USDC
 
 ```bash
 boundless account deposit-stake STAKE_AMOUNT
 ```
 
-![image](https://github.com/user-attachments/assets/5c0635d2-ec3d-4805-bbf7-aee5525c46e0)
+![image](https://github.com/user-attachments/assets/9556462f-4386-4eaa-9214-40e00b5c0ceb)
+
+- Base Chain - ETH - Minimum 0.00001
+```bash
+boundless account deposit 0.000001
+```
+![image](https://github.com/user-attachments/assets/98beeaba-e50c-4a55-a0e3-671eaa0d9a81)
+
 
 ## Start : 
 ```bash
