@@ -4,16 +4,16 @@
 
 | X        | Minimum              |
 |------------------|----------------------------|
-| **CPU**          | 16++ |
+| **İşlemci**          | 16++ |
 | **RAM**          | 32++ GB                   |
-| **Storage**      | 200+ NVME GB SDD                   |
-| **Network**      | 100 Mbps (1 Gbps+ recommended) |
+| **Disk Alanı**      | 200+ NVME GB SDD                   |
+| **Internet Hızı**      | 100 Mbps (1 Gbps+ recommended) |
 | **UBUNTU**      | UBUNTU 22.04 ! |
 
 
-| Server Provider        | Link              | Features |
+| Server Sağlayıcısı        | Link              | Neden |
 |------------------|----------------------------|----------------------------|
-| **VAST GPU**          | [Link](https://cloud.vast.ai/?ref_id=228932) | Cheap / Paypal |
+| **VAST GPU**          | [Link](https://cloud.vast.ai/?ref_id=228932) | İstediğimiz Sunucular / Kripto Ödeme |
 
 ## Project : 
 - Twitter : https://x.com/boundless_xyz
@@ -21,16 +21,16 @@
 ![image](https://github.com/user-attachments/assets/5fbb7dcd-ab59-4d63-9bc4-a3b1ec89b2a5)
 
 - Ubuntu 22.04 VM
-- 16 CPU - Good CPU 
-- Good Internet Speed
-- Minimum Container size 200+
+- 16 CPU - 3 GHZ üstü EPYC , Ryzen İşlemcili Serverlara Bakabilirsiniz
+- 100 Mbps üstü indirme hızı olan serverlar +
+- Minimum Container alanını 250+ ayarla
 
-## 1. Server Update : 
+## 1. Server Güncelleme : 
 
 ```bash
 sudo apt update -y && sudo apt upgrade -y
 ```
-## 2. Install Packages:
+## 2. Paketleri İndirelim :
 
 ```bash
 sudo apt install htop ca-certificates zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev tmux iptables curl nvme-cli git wget make jq libleveldb-dev build-essential pkg-config ncdu tar clang bsdmainutils lsb-release libssl-dev libreadline-dev libffi-dev jq gcc screen file nano btop unzip lz4 -y
@@ -46,7 +46,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 docker version
 ```
 
-## 4. Install Docker Compose : 
+## 4. Docker Compose : 
 
 ```bash
 VER=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep tag_name | cut -d '"' -f 4)
@@ -55,7 +55,7 @@ chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
 
-## 4. Docker User Permissions
+## 4. Docker User İzinleri
 
 ```bash
 sudo groupadd docker
@@ -85,7 +85,7 @@ rzup install rust
 
 ![image](https://github.com/user-attachments/assets/fec1eec2-c86b-4f97-b9e2-d52b54622271)
 
-## JUST : 
+## JUST Indirme : 
 ```bash
 cargo install just
 ```
