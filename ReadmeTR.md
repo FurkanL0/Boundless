@@ -96,14 +96,13 @@ source $HOME/.cargo/env
 just --version
 ```
 
-## Screen : 
+## Screen Açalım  : 
+
 ```bash
 screen -S boundless
 ```
 
-## Step 1: Clone Boundless Repository
-
-- On Ubuntu 22.04, clone the Boundless monorepos on your proving machine and upgrade to the latest version:
+## Boundless Reposunu İndirelim.
 
 ```bash
 git clone https://github.com/boundless-xyz/boundless
@@ -146,7 +145,7 @@ RUST_LOG=info bento_cli -c 32
 ![image](https://github.com/user-attachments/assets/afb73def-4253-4a3d-83b2-0f9214028da7)
 
 
-## Install Boundless CLI : 
+## Boundless CLI Indirelim : 
 ```bash
 cargo install --locked boundless-cli
 ```
