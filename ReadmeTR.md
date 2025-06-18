@@ -118,7 +118,7 @@ git checkout release-0.10
 - Bu kısım Biraz Uzun Sürebilir.
 
 ```bash
-sudo ./scripts/setup.sh
+bash ./scripts/setup.sh
 ```
 ![image](https://github.com/user-attachments/assets/f45981cc-18ad-4439-b14d-e811d3745249)
 
