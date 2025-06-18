@@ -113,18 +113,18 @@ git checkout release-0.10
 ![image](https://github.com/user-attachments/assets/6159be8a-5cae-42a2-8e7c-d5735c59b38d)
 
 
-## Step 2: Install Dependencies
+## ./Scripts Setup İle Gerekli Yüklemeleri Yapalım
 
-- Install Docker Compose and Docker Nvidia Support. For Ubuntu 22.04 LTS, run the following command for a quick installation:
+- Bu kısım Biraz Uzun Sürebilir.
 
 ```bash
 sudo ./scripts/setup.sh
 ```
 ![image](https://github.com/user-attachments/assets/f45981cc-18ad-4439-b14d-e811d3745249)
 
-## Step 3: Test Proof
+## Deneme Atalım - Test Proof
 
-#### Install Bento_CLI : 
+#### Bento_CLI Indirelim : 
 ```bash
 cargo install --git https://github.com/risc0/risc0 bento-client --bin bento_cli
 ```
@@ -135,7 +135,7 @@ source ~/.bashrc
 ![image](https://github.com/user-attachments/assets/140f0ddf-ee3f-4202-933d-5c7b27c98e3e)
 
 
-- Run Bento : 
+- Bento'yu Çalıştıralım : 
 ```bash
 just bento
 ```
@@ -144,6 +144,7 @@ RUST_LOG=info bento_cli -c 32
 ```
 ![image](https://github.com/user-attachments/assets/afb73def-4253-4a3d-83b2-0f9214028da7)
 
+- Herhangi bir sorun yoksa onaylayıp kapatacaktır.
 
 ## Boundless CLI Indirelim : 
 ```bash
@@ -164,8 +165,8 @@ source ~/.bashrc
 nano .env.base-sepolia
 ```
 
-- Add export PRIVATE_KEY=
-- Add export RPC_URL=""
+- export PRIVATE_KEY=   Buraya cüzdan private keyiniz
+- Add export RPC_URL=""  2 Tırnak arasına base sepolia rpc'niz.
 
 ![image](https://github.com/user-attachments/assets/7a6027d2-15b3-4611-b7e3-ec3c707f9a15)
 
