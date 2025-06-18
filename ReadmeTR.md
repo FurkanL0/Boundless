@@ -14,17 +14,10 @@
 | **UBUNTU**      | UBUNTU 22.04 ! |
 
 
-| Server Sağlayıcısı        | Link              | Neden |
+| Server Sağlayıcısı        | Kayıt Link              | Neden |
 |------------------|----------------------------|----------------------------|
 | **VAST GPU**          | [Link](https://cloud.vast.ai/?ref_id=228932) | İstediğimiz Sunucular / Kripto Ödeme |
 
-
-![image](https://github.com/user-attachments/assets/5fbb7dcd-ab59-4d63-9bc4-a3b1ec89b2a5)
-
-- Template : Ubuntu 22.04 VM
-- 16 CPU - 3 GHZ üstü EPYC , Ryzen İşlemcili Serverlara Bakabilirsiniz
-- 100 Mbps üstü indirme hızı olan serverlar +
-- Minimum Container alanını 250+ ayarla
 
 ## Bağlanmak için SSH Key Ayarlama : 
 
@@ -51,6 +44,13 @@ Enter same passphrase again:
 -  https://cloud.vast.ai/manage-keys/ - + New'den kayıt edin keyinizi.
 
 ![image](https://github.com/user-attachments/assets/3a15ce26-341b-4ca9-8a7a-47d1cd3b927c)
+
+![image](https://github.com/user-attachments/assets/5fbb7dcd-ab59-4d63-9bc4-a3b1ec89b2a5)
+
+- Template : Ubuntu 22.04 VM
+- 16 CPU - 3 GHZ üstü EPYC , Ryzen İşlemcili Serverlara Bakabilirsiniz
+- 100 Mbps üstü indirme hızı olan serverlar +
+- Minimum Container alanını 250+ ayarla
 
 - Sunucunu seçip Rent'e basıp kiralayabilirsiniz.
 
