@@ -190,16 +190,16 @@ boundless account deposit-stake STAKE_AMOUNT
 
 ![image](https://github.com/user-attachments/assets/9556462f-4386-4eaa-9214-40e00b5c0ceb)
 
-- Base Chain - ETH - Minimum 0.00001
+- Base Chain - ETH Deposit
 ```bash
-boundless account deposit 0.000001
+boundless account deposit 0.0001
 ```
 ![image](https://github.com/user-attachments/assets/98beeaba-e50c-4a55-a0e3-671eaa0d9a81)
 
 
 ## Start : 
 ```bash
-just broker
+just broker up ./.env.base-sepolia
 ```
 
 ![wos](https://github.com/user-attachments/assets/744e92bb-5b99-4e6f-bd88-4bd45d760faa)
@@ -217,3 +217,6 @@ docker compose logs -fn 100
 ```
 - Dashboard : https://explorer.beboundless.xyz/orders
 - Guild : https://guild.xyz/boundless-xyz#!
+
+![image](https://github.com/user-attachments/assets/de72337e-8646-42fc-bb43-457d2435b123)
+
