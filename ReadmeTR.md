@@ -155,9 +155,9 @@ source ~/.bashrc
 ```
 
 
-## Base Mainnet : 
+## Base Sepolia : 
 ```bash
-nano .env.base
+nano .env.base-sepolia
 ```
 
 - Add export PRIVATE_KEY=
@@ -168,7 +168,7 @@ nano .env.base
 
 - Inject : 
 ```bash
-source .env.base
+source .env.base-sepolia
 ```
 #### Stake : 
 
