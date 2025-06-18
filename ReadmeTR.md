@@ -185,7 +185,7 @@ source .env.base-sepolia
 - Base Chain - USDC - Minimum 5 USDC : https://faucet.circle.com/
 
 ```bash
-boundless account deposit-stake STAKE_AMOUNT
+boundless account deposit-stake 5
 ```
 
 ![image](https://github.com/user-attachments/assets/9556462f-4386-4eaa-9214-40e00b5c0ceb)
