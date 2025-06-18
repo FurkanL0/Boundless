@@ -197,7 +197,7 @@ boundless account deposit 0.0001
 ![image](https://github.com/user-attachments/assets/98beeaba-e50c-4a55-a0e3-671eaa0d9a81)
 
 
-## Start : 
+## Başlatma : 
 ```bash
 just broker up ./.env.base-sepolia
 ```
@@ -214,6 +214,11 @@ docker compose logs -f broker
 ```
 ```bash
 docker compose logs -fn 100
+```
+
+- Durdurmak İçin : 
+```bash
+just broker down ./.env.base-sepolia
 ```
 - Dashboard : https://explorer.beboundless.xyz/orders
 - Guild : https://guild.xyz/boundless-xyz#!
