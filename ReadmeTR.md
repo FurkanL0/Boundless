@@ -156,6 +156,10 @@ source ~/.bashrc
 
 
 ## Base Sepolia : 
+
+- Base Sepolia RPC İçin : https://dashboard.blockpi.io/rpc/endpoint
+
+
 ```bash
 nano .env.base-sepolia
 ```
