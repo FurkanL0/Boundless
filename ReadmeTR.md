@@ -69,6 +69,9 @@ Enter same passphrase again:
 - Bağlantı için verdiği komutu CMD / Termius Terminale yapıştırıp enterleyin.
 - Size bağlantı sorusu sorar ise yes yazıp enterleyin.
 
+![image](https://github.com/user-attachments/assets/e3a37172-f583-4bfe-b5b0-fba98c42b0de)
+
+
 ## 1. Server Güncelleme : 
 
 ```bash
