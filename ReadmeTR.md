@@ -2,6 +2,9 @@
 
 ![1500x500](https://github.com/user-attachments/assets/b95f0be0-3e34-417b-9a3a-38990964a91f)
 
+## Project : 
+- Twitter : https://x.com/boundless_xyz
+
 | X        | Minimum              |
 |------------------|----------------------------|
 | **İşlemci**          | 16++ |
@@ -15,8 +18,6 @@
 |------------------|----------------------------|----------------------------|
 | **VAST GPU**          | [Link](https://cloud.vast.ai/?ref_id=228932) | İstediğimiz Sunucular / Kripto Ödeme |
 
-## Project : 
-- Twitter : https://x.com/boundless_xyz
 
 ![image](https://github.com/user-attachments/assets/5fbb7dcd-ab59-4d63-9bc4-a3b1ec89b2a5)
 
@@ -24,6 +25,24 @@
 - 16 CPU - 3 GHZ üstü EPYC , Ryzen İşlemcili Serverlara Bakabilirsiniz
 - 100 Mbps üstü indirme hızı olan serverlar +
 - Minimum Container alanını 250+ ayarla
+
+## Bağlanmak için SSH Key Ayarlama : 
+
+- Wsl Kullanıyorsanız CMD / Powershell - Mac'de Terminal Açın
+```bash
+ssh-keygen
+```
+
+![image](https://github.com/user-attachments/assets/ec8c9bac-3397-40da-ac0d-70bcb985a360)
+
+- 3 Soru Yöneltiyor ; 
+```bash
+Enter file in which to save the key (/home/codespace/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again: 
+```
+- İsim değiştirmek isterseniz (/home/codespace/.ssh/id_rsa): 'den sonra isim yazıp enter'e basın.
+- Şifre'ye enter sonrakinede enter diyip geçebilirsiniz.
 
 ## 1. Server Güncelleme : 
 
