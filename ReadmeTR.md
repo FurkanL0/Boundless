@@ -220,3 +220,13 @@ docker compose logs -fn 100
 
 ![image](https://github.com/user-attachments/assets/de72337e-8646-42fc-bb43-457d2435b123)
 
+## Explorer'da Kendi İsmimizi Sabitleme : 
+
+![image](https://github.com/user-attachments/assets/3c940e4f-555e-4ab3-9cc2-6f73340f55e0)
+
+- 0xaddress - buraya cüzdan adresi
+
+```bash
+{"0xaddress": "istediginizad"}
+```
+- Import CustomName'e tıklayın artık koyduğunuz isim ile gösterecek.
