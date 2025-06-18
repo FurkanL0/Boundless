@@ -235,3 +235,7 @@ just broker down ./.env.base-sepolia
 {"0xaddress": "istediginizad"}
 ```
 - Import CustomName'e tıklayın artık koyduğunuz isim ile gösterecek.
+
+## Rekabet : 
+
+- Kendinizi binlerce ürünün satıldığı bir pazarda satıcı olarak düşünmeniz lazım.
