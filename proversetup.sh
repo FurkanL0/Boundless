@@ -1,35 +1,77 @@
 #!/bin/bash
 
-set -e
+set -euo pipefail
 
-echo "🔧 [1/13] Sistem güncelleniyor..."
+# === Renk tanımları ===
+CYAN='\033[0;36m'
+LIGHTBLUE='\033[1;34m'
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BOLD='\033[1m'
+RESET='\033[0m'
+
+# === Log dosyaları ===
+LOG_FILE="/var/log/kurulum.log"
+ERROR_LOG="/var/log/kurulum_error.log"
+mkdir -p $(dirname "$LOG_FILE")
+touch "$LOG_FILE" "$ERROR_LOG"
+
+# === Hata tuzağı ===
+trap 'echo -e "${RED}[HATA]${RESET} Komut basarisiz: $BASH_COMMAND (Satır: $LINENO)" | tee -a "$ERROR_LOG"' ERR
+
+log() {
+    echo -e "$1" | tee -a "$LOG_FILE"
+}
+
+# === dpkg durumunu kontrol et ===
+check_dpkg() {
+    if dpkg --audit | grep -q "dpkg was interrupted"; then
+        echo -e "${RED}dpkg bir işlemi yarıda kalmış. şu komutu çalıştır: ${RESET}sudo dpkg --configure -a"
+        exit 1
+    fi
+}
+
+# === Komut var mı ===
+command_exists() {
+    command -v "$1" &> /dev/null
+}
+
+log "${CYAN}Kurulum başladı: $(date)${RESET}"
+
+log "${CYAN}[1/12] Sistem güncelleniyor...${RESET}"
+check_dpkg
 apt update && apt upgrade -y
 
-echo "📦 [2/13] Temel bağımlılıklar kuruluyor..."
+log "${CYAN}[2/12] Bağımlılıklar kuruluyor...${RESET}"
 apt install -y curl git wget build-essential jq make gcc nano unzip \
     pkg-config libssl-dev lsb-release ca-certificates gnupg software-properties-common \
     docker.io docker-compose clang libclang-dev libleveldb-dev postgresql-client \
     iptables automake autoconf tmux htop nvme-cli libgbm1 bsdmainutils ncdu nvtop \
     apt-transport-https gnupg-agent
 
-echo "🐳 [3/13] Docker servisi yapılandırılıyor..."
-systemctl enable docker || echo "Naber"
-systemctl start docker || echo "İyi bende teşekkür ederim"
-usermod -aG docker $USER || true
+log "${CYAN}[3/12] Docker kuruluyor...${RESET}"
+if ! command_exists docker; then
+    apt install -y docker.io
+fi
+systemctl enable docker || echo "[!] systemctl desteklenmiyor."
+systemctl start docker || echo "[!] docker başlatılamadı."
+usermod -aG docker "$USER" || true
 
-echo "🖥️ [4/13] NVIDIA GPU kontrol ediliyor..."
-if nvidia-smi &> /dev/null; then
-  echo "✅ NVIDIA GPU algılandı. GPU destekli kurulum başlatılıyor."
+log "${CYAN}[4/12] NVIDIA GPU kontrol ediliyor...${RESET}"
+if command_exists nvidia-smi; then
+    log "${GREEN}NVIDIA GPU bulundu. Kurulum devam ediyor...${RESET}"
 
-  echo "📦 [5/13] NVIDIA Container Toolkit kuruluyor..."
-  distribution=$(. /etc/os-release; echo $ID$VERSION_ID)
-  curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | apt-key add -
-  curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list \
-    | tee /etc/apt/sources.list.d/nvidia-docker.list
-  apt update
-  apt install -y nvidia-docker2
+    log "${CYAN}[5/12] NVIDIA Container Toolkit kuruluyor...${RESET}"
+    distribution=$(. /etc/os-release; echo $ID$VERSION_ID)
+    curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | apt-key add -
+    curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list \
+        | tee /etc/apt/sources.list.d/nvidia-docker.list
+    apt update
+    apt install -y nvidia-docker2
 
-  cat <<EOF > /etc/docker/daemon.json
+    mkdir -p /etc/docker
+    cat <<EOF > /etc/docker/daemon.json
 {
   "default-runtime": "nvidia",
   "runtimes": {
@@ -41,48 +83,47 @@ if nvidia-smi &> /dev/null; then
 }
 EOF
 
-  systemctl restart docker || echo "ℹ️ systemctl mevcut değil, yeniden başlatılamadı."
+    systemctl restart docker || echo "[!] docker yeniden başlatılamadı."
 
-  echo "⚙️ [6/13] CUDA Toolkit kuruluyor..."
-  cuda_dist=$(grep '^ID=' /etc/os-release | cut -d'=' -f2 | tr -d '"')$(grep '^VERSION_ID=' /etc/os-release | cut -d'=' -f2 | tr -d '"' | tr -d '.')
-  wget https://developer.download.nvidia.com/compute/cuda/repos/$cuda_dist/$(uname -m)/cuda-keyring_1.1-1_all.deb
-  dpkg -i cuda-keyring_1.1-1_all.deb
-  rm cuda-keyring_1.1-1_all.deb
-  apt-get update
-  apt-get install -y cuda-toolkit
+    log "${CYAN}[6/12] CUDA Toolkit kuruluyor...${RESET}"
+    cuda_dist=$(grep '^ID=' /etc/os-release | cut -d'=' -f2 | tr -d '"')$(grep '^VERSION_ID=' /etc/os-release | cut -d'=' -f2 | tr -d '"' | tr -d '.')
+    wget https://developer.download.nvidia.com/compute/cuda/repos/$cuda_dist/$(uname -m)/cuda-keyring_1.1-1_all.deb
+    dpkg -i cuda-keyring_1.1-1_all.deb
+    rm cuda-keyring_1.1-1_all.deb
+    apt-get update
+    apt-get install -y cuda-toolkit
 else
-  echo "⚠️ NVIDIA GPU bulunamadı veya erişilemedi. GPU adımları atlanıyor."
+    log "${YELLOW}NVIDIA GPU bulunamadı. GPU adımları atlanıyor.${RESET}"
 fi
 
-echo "🦀 [7/13] Rust kuruluyor..."
+log "${CYAN}[7/12] Rust kuruluyor...${RESET}"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source "$HOME/.cargo/env"
 rustup update
 
-echo "🛠️ [8/13] Just kuruluyor..."
+log "${CYAN}[8/12] Just kuruluyor...${RESET}"
 curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/local/bin
 
-echo "📡 [9/13] rzup (RISC Zero) kuruluyor..."
+log "${CYAN}[9/12] rzup ve toolchain kuruluyor...${RESET}"
 curl -L https://risczero.com/install | bash
-source ~/.bashrc || true
-rzup install rust
 export PATH="$PATH:/root/.risc0/bin"
+rzup install rust
 
-echo "🔩 [10/13] cargo-risczero kuruluyor..."
+log "${CYAN}[10/12] cargo-risczero kuruluyor...${RESET}"
 cargo install cargo-risczero
 rzup install cargo-risczero
 
-echo "🧱 [11/13] bento-client kuruluyor..."
+log "${CYAN}[11/12] bento-client kuruluyor...${RESET}"
 TOOLCHAIN=$(rustup toolchain list | grep risc0 | head -1)
 RUSTUP_TOOLCHAIN=$TOOLCHAIN cargo install --git https://github.com/risc0/risc0 bento-client --bin bento_cli
 
-echo "📦 [12/13] boundless-cli kuruluyor..."
+log "${CYAN}[12/12] boundless-cli kuruluyor...${RESET}"
 cargo install --locked boundless-cli
 
-echo "📥 [13/13] Boundless deposu klonlanıyor..."
+log "${CYAN}Boundless deposu klonlanıyor...${RESET}"
 git clone https://github.com/boundless-xyz/boundless
 cd boundless
 git checkout release-0.10
 git submodule update --init --recursive
 
-echo "✅ Kurulum başarıyla tamamlandı!"
+log "${GREEN}✅ Kurulum tamamlandı. Boundless dizinine gidip kullanmaya başlayabilirsiniz.${RESET}"
