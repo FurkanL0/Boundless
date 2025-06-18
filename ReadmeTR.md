@@ -219,12 +219,14 @@ source .env.base-sepolia
 ```
 #### Stake : 
 
-- Eth'den Sepoli'ya Bridge İçin : 
+- Ethereum Sepoliadan Base Sepoli'ya Bridge İçin : 
 - 1 : https://testnet.brid.gg/base-sepolia?amount=&originChainId=11155111&token=ETH
 - 2 : https://testnets.relay.link/bridge/base-sepolia?fromChainId=11155111
+
 - USDC Faucet : 
 
 - Base Chain - USDC - Minimum 5 USDC : https://faucet.circle.com/
+- Ağlardan Base Sepolia seçmeyi unutmayın
 
 ```bash
 boundless account deposit-stake 5
