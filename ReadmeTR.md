@@ -45,6 +45,8 @@ Enter same passphrase again:
 
 ![image](https://github.com/user-attachments/assets/3a15ce26-341b-4ca9-8a7a-47d1cd3b927c)
 
+## Sunucu Kiralama : 
+
 ![image](https://github.com/user-attachments/assets/5fbb7dcd-ab59-4d63-9bc4-a3b1ec89b2a5)
 
 - Template : Ubuntu 22.04 VM
