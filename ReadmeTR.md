@@ -260,6 +260,10 @@ docker compose logs -f broker
 docker compose logs -fn 100
 ```
 
+![image](https://github.com/user-attachments/assets/15c36655-03ff-4099-b6ba-41ceadea4f41)
+
+- CTRL C ile loglardan çıkabilirsiniz.
+
 - Durdurmak İçin : 
 ```bash
 just broker down ./.env.base-sepolia
