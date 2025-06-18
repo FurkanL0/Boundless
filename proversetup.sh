@@ -54,9 +54,19 @@ log "${CYAN}[3/12] Docker kuruluyor...${RESET}"
 if ! command_exists docker; then
     apt install -y docker.io
 fi
-systemctl enable docker || echo "[!] systemctl desteklenmiyor."
-systemctl start docker || echo "[!] docker başlatılamadı."
-usermod -aG docker "$USER" || true
+
+# DinD (Docker-in-Docker) ortamlarında systemd genellikle çalışmadığı için bu adımlar atlanıyor.
+# Docker servisi zaten DinD konteyneri tarafından yönetiliyor olmalıdır.
+log "${YELLOW}DinD (Docker-in-Docker) ortamı algılandı veya systemd kullanılamıyor. Docker servisi etkinleştirme/başlatma adımları atlanıyor.${RESET}"
+# Mevcut kullanıcıyı docker grubuna ekle. root kullanıcısı için bu gerekli değildir.
+if [ "$(id -un)" != "root" ]; then
+    CURRENT_USER=$(id -un)
+    log "${CYAN}Kullanıcı '${CURRENT_USER}' docker grubuna ekleniyor...${RESET}"
+    usermod -aG docker "${CURRENT_USER}" || true
+else
+    log "${YELLOW}Betik root olarak çalıştığı için 'docker' grubuna kullanıcı ekleme adımı atlanıyor.${RESET}"
+fi
+
 
 log "${CYAN}[4/12] NVIDIA GPU kontrol ediliyor...${RESET}"
 if command_exists nvidia-smi; then
@@ -83,7 +93,9 @@ if command_exists nvidia-smi; then
 }
 EOF
 
-    systemctl restart docker || echo "[!] docker yeniden başlatılamadı."
+    # DinD ortamında docker servisini yeniden başlatmak genellikle sorunludur.
+    log "${YELLOW}DinD ortamında Docker servisini yeniden başlatma atlanıyor. Değişiklikler için konteynerin yeniden başlatılması gerekebilir.${RESET}"
+    # systemctl restart docker || echo "[!] docker yeniden başlatılamadı."
 
     log "${CYAN}[6/12] CUDA Toolkit kuruluyor...${RESET}"
     cuda_dist=$(grep '^ID=' /etc/os-release | cut -d'=' -f2 | tr -d '"')$(grep '^VERSION_ID=' /etc/os-release | cut -d'=' -f2 | tr -d '"' | tr -d '.')
@@ -106,7 +118,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -
 
 log "${CYAN}[9/12] rzup ve toolchain kuruluyor...${RESET}"
 curl -L https://risczero.com/install | bash
-export PATH="$PATH:/root/.risc0/bin"
+# PATH'e eklemeyi kalıcı hale getirmek için, genellikle .bashrc veya benzeri bir dosyaya eklenir.
+# Ancak bu betik çalıştığı sürece yeterli olacaktır.
+export PATH="$PATH:$HOME/.risc0/bin" # /root/.risc0/bin yerine $HOME kullanmak daha geneldir.
 rzup install rust
 
 log "${CYAN}[10/12] cargo-risczero kuruluyor...${RESET}"
@@ -114,7 +128,13 @@ cargo install cargo-risczero
 rzup install cargo-risczero
 
 log "${CYAN}[11/12] bento-client kuruluyor...${RESET}"
-TOOLCHAIN=$(rustup toolchain list | grep risc0 | head -1)
+# rustup toolchain list çıktısı birden fazla satır içerebilir, en uygun olanı seçmek için dikkatli olmalıyız.
+# Genellikle ilk satırda varsayılan veya kurulu olan toolchain bulunur.
+TOOLCHAIN=$(rustup toolchain list | grep risc0 | head -1 | awk '{print $1}')
+if [ -z "$TOOLCHAIN" ]; then
+    log "${RED}HATA: risc0 toolchain bulunamadı. Lütfen rzup kurulumunu kontrol edin.${RESET}"
+    exit 1
+fi
 RUSTUP_TOOLCHAIN=$TOOLCHAIN cargo install --git https://github.com/risc0/risc0 bento-client --bin bento_cli
 
 log "${CYAN}[12/12] boundless-cli kuruluyor...${RESET}"
