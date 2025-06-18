@@ -44,6 +44,16 @@ Enter same passphrase again:
 - İsim değiştirmek isterseniz (/home/codespace/.ssh/id_rsa): 'den sonra isim yazıp enter'e basın.
 - Şifre'ye enter sonrakinede enter diyip geçebilirsiniz.
 
+![image](https://github.com/user-attachments/assets/6e944f73-120c-44e1-9d29-d220352d9594)
+
+- \home\kullanici\.ssh\id_rsa.pub 'ı açın. İçindekini kopyalayın.
+
+-  https://cloud.vast.ai/manage-keys/ - + New'den kayıt edin keyinizi.
+
+![image](https://github.com/user-attachments/assets/3a15ce26-341b-4ca9-8a7a-47d1cd3b927c)
+
+- Sunucunu seçip Rent'e basıp kiralayabilirsiniz.
+
 ## 1. Server Güncelleme : 
 
 ```bash
