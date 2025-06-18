@@ -70,7 +70,7 @@ exit 1
 ;;
 esac
 done
-\# Trap function for logging on exit
+\ # Trap function for logging on exit
 cleanup\_on\_exit\(\) \{
 local exit\_code\=</span>?
     if [ $exit_code -ne 0 ]; then
