@@ -13,11 +13,13 @@
 | **Internet Hızı**      | 100 Mbps (1 Gbps+ recommended) |
 | **UBUNTU**      | UBUNTU 22.04 ! |
 
+#### Vast Kayıt : 
 
 | Server Sağlayıcısı        | Kayıt Link              | Neden |
 |------------------|----------------------------|----------------------------|
 | **VAST GPU**          | [Link](https://cloud.vast.ai/?ref_id=228932) | İstediğimiz Sunucular / Kripto Ödeme |
 
+- https://cloud.vast.ai/billing/ 'den Kripto yada Kart ile bakiye ekleyebilirsiniz.
 
 ## Bağlanmak için SSH Key Ayarlama : 
 
