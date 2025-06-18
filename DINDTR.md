@@ -52,12 +52,15 @@ Enter same passphrase again:
 
 ![image](https://github.com/user-attachments/assets/5fbb7dcd-ab59-4d63-9bc4-a3b1ec89b2a5)
 
-- Template : Ubuntu 22.04 VM
+- Template'i DIND seçeceğiz
 - 16 CPU - 3 GHZ üstü EPYC , Ryzen İşlemcili Serverlara Bakabilirsiniz
 - 100 Mbps üstü indirme hızı olan serverlar +
 - Minimum Container alanını 250+ ayarla
 
-- Sunucunu seçip Rent'e basıp kiralayabilirsiniz.
+![image](https://github.com/user-attachments/assets/345208e7-fae0-4277-8c33-0c12b6acbe31)
+
+
+- Sunucunu seçip Crate Pod'a basıp kiralayabilirsiniz.
 
 ## Sunucuya Giriş ; 
 
