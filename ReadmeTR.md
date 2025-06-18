@@ -54,6 +54,17 @@ Enter same passphrase again:
 
 - Sunucunu seçip Rent'e basıp kiralayabilirsiniz.
 
+## Sunucuya Giriş ; 
+
+![image](https://github.com/user-attachments/assets/38947105-2719-420d-9d6e-8a87b718d10b)
+
+- Connect'e basın.
+
+![image](https://github.com/user-attachments/assets/cbba0796-733e-4b2b-9c7f-219cc1c69d55)
+
+- Bağlantı için verdiği komutu CMD / Termius Terminale yapıştırıp enterleyin.
+- Size bağlantı sorusu sorar ise yes yazıp enterleyin.
+
 ## 1. Server Güncelleme : 
 
 ```bash
