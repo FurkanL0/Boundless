@@ -4,7 +4,7 @@
 |------------------|----------------------------|
 | **CPU**          | 4++ |
 | **RAM**          | 4++ GB                   |
-| **Storage**      | 20+ NVME GB SDD                   |
+| **Storage**      | 15+ NVME GB SDD                   |
 | **Network**      | 100 Mbps (1 Gbps+ recommended) |
 
 ## 1. Server / PC Update : 
