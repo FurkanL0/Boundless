@@ -1,5 +1,12 @@
 ![1500x500](https://github.com/user-attachments/assets/b262662f-848e-4558-9aa4-7945e585b857)
 
+| X        | Minimum              |
+|------------------|----------------------------|
+| **CPU**          | 4++ |
+| **RAM**          | 4++ GB                   |
+| **Storage**      | 20+ NVME GB SDD                   |
+| **Network**      | 100 Mbps (1 Gbps+ recommended) |
+
 ## 1. Server / PC Update : 
 
 ```bash
