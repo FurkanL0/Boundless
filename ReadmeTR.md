@@ -143,6 +143,15 @@ source $HOME/.cargo/env
 just --version
 ```
 
+## RiscZero : 
+
+```bash
+cargo install cargo-risczero
+```
+```bash
+rzup install cargo-risczero
+```
+
 ## Screen Açalım  : 
 
 ```bash
