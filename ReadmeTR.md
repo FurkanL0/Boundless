@@ -301,3 +301,7 @@ just broker down ./.env.base-sepolia
 ## Rekabet : 
 
 - Kendinizi binlerce ürünün satıldığı bir pazarda satıcı olarak düşünmeniz lazım.
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=FurkanL0&style=flat-square&color=red&label=Profile+Views+/+Repo+Views+" alt="Repo / Profile Views" />
+</p>
