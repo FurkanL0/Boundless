@@ -163,7 +163,7 @@ screen -S boundless
 ```bash
 git clone https://github.com/boundless-xyz/boundless
 cd boundless
-git checkout release-0.10
+git checkout release-0.11
 ```
 
 ![image](https://github.com/user-attachments/assets/6159be8a-5cae-42a2-8e7c-d5735c59b38d)
